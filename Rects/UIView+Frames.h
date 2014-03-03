@@ -40,4 +40,9 @@
 - (void)rotateCounterclockwise:(NSInteger)degrees animated:(BOOL)animated;
 - (void)rotateCounterclockwise:(NSInteger)degrees aboutPoint:(CGPoint)point animated:(BOOL)animated;
 
+#pragma mark - Helpers
+
+- (BOOL)intersectsView:(UIView *)view;
+- (BOOL)containsView:(UIView *)view;
+
 @end

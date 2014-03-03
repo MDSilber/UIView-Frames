@@ -242,4 +242,16 @@
     
 }
 
+#pragma mark - Helpers
+
+- (BOOL)intersectsView:(UIView *)view
+{
+    return CGRectIntersectsRect(self.frame, view.frame);
+}
+
+- (BOOL)containsView:(UIView *)view
+{
+    return CGRectContainsRect(self.frame, view.frame);
+}
+
 @end
