@@ -292,7 +292,7 @@
     self.frame = frame;
 }
 
-- (void)expandByFactor:(NSInteger)factor animated:(BOOL)animated
+- (void)expandByFactor:(CGFloat)factor animated:(BOOL)animated
 {
     if (animated) {
         [UIView animateWithDuration:0.5f animations:^{
@@ -303,12 +303,17 @@
     }
 }
 
-- (void)_expandByFactor:(NSInteger)factor
+- (void)_expandByFactor:(CGFloat)factor
 {
-    
+    CGRect frame = self.frame;
+    CGPoint center = self.center;
+    frame.size.width *= factor;
+    frame.size.height *= factor;
+    self.frame = frame;
+    self.center = center;
 }
 
-- (void)contractByFactor:(NSInteger)factor animated:(BOOL)animated
+- (void)contractByFactor:(CGFloat)factor animated:(BOOL)animated
 {
     if (animated) {
         [UIView animateWithDuration:0.5f animations:^{
@@ -319,9 +324,14 @@
     }
 }
 
-- (void)_contractByFactor:(NSInteger)factor
+- (void)_contractByFactor:(CGFloat)factor
 {
-    
+    CGRect frame = self.frame;
+    CGPoint center = self.center;
+    frame.size.width = floorf(frame.size.width/factor);
+    frame.size.height = floorf(frame.size.height/factor);
+    self.frame = frame;
+    self.center = center;
 }
 
 - (void)rotateClockwise:(NSInteger)degrees animated:(BOOL)animated

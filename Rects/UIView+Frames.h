@@ -43,8 +43,8 @@
 - (void)moveLeft:(NSInteger)numberOfPixels animated:(BOOL)animated;
 - (void)moveRight:(NSInteger)numberOfPixels animated:(BOOL)animated;
 
-- (void)expandByFactor:(NSInteger)factor animated:(BOOL)animated;
-- (void)contractByFactor:(NSInteger)factor animated:(BOOL)animated;
+- (void)expandByFactor:(CGFloat)factor animated:(BOOL)animated;
+- (void)contractByFactor:(CGFloat)factor animated:(BOOL)animated;
 
 - (void)rotateClockwise:(NSInteger)degrees animated:(BOOL)animated;
 - (void)rotateClockwise:(NSInteger)degrees aboutPoint:(CGPoint)point animated:(BOOL)animated;
