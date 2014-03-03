@@ -8,6 +8,8 @@
 
 #import "UIView+Frames.h"
 
+static float animationTime = 0.5f;
+
 @implementation UIView (Frames)
 
 #pragma mark - Getters
@@ -77,7 +79,7 @@
 - (void)setOrigin:(CGPoint)origin animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _setOrigin:origin];
         } completion:nil];
     } else {
@@ -95,7 +97,7 @@
 - (void)setOriginX:(CGFloat)x animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _setOriginX:x];
         } completion:nil];
     } else {
@@ -113,7 +115,7 @@
 - (void)setOriginY:(CGFloat)y animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _setOriginY:y];
         } completion:nil];
     } else {
@@ -131,7 +133,7 @@
 - (void)setSize:(CGSize)size animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _setSize:size];
         } completion:nil];
     } else {
@@ -149,7 +151,7 @@
 - (void)setWidth:(CGFloat)width animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _setWidth:width];
         } completion:nil];
     } else {
@@ -167,7 +169,7 @@
 - (void)setHeight:(CGFloat)height animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _setHeight:height];
         } completion:nil];
     } else {
@@ -185,7 +187,7 @@
 - (void)setCenterX:(CGFloat)x animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _setCenterX:x];
         } completion:nil];
     } else {
@@ -203,7 +205,7 @@
 - (void)setCenterY:(CGFloat)y animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _setCenterY:y];
         } completion:nil];
     } else {
@@ -223,7 +225,7 @@
 - (void)moveUp:(NSInteger)numberOfPixels animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _moveUp:numberOfPixels];
         } completion:nil];
     } else {
@@ -241,7 +243,7 @@
 - (void)moveDown:(NSInteger)numberOfPixels animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _moveDown:numberOfPixels];
         } completion:nil];
     } else {
@@ -259,7 +261,7 @@
 - (void)moveLeft:(NSInteger)numberOfPixels animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _moveLeft:numberOfPixels];
         } completion:nil];
     } else {
@@ -277,7 +279,7 @@
 - (void)moveRight:(NSInteger)numberOfPixels animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _moveRight:numberOfPixels];
         } completion:nil];
     } else {
@@ -295,7 +297,7 @@
 - (void)expandByFactor:(CGFloat)factor animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _expandByFactor:factor];
         } completion:nil];
     } else {
@@ -316,7 +318,7 @@
 - (void)contractByFactor:(CGFloat)factor animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _contractByFactor:factor];
         } completion:nil];
     } else {
@@ -337,7 +339,7 @@
 - (void)rotateClockwise:(NSInteger)degrees animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _rotateClockwise:degrees];
         } completion:nil];
     } else {
@@ -353,7 +355,7 @@
 - (void)rotateClockwise:(NSInteger)degrees aboutPoint:(CGPoint)point animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _rotateClockwise:degrees aboutPoint:point];
         } completion:nil];
     } else {
@@ -369,7 +371,7 @@
 - (void)rotateCounterclockwise:(NSInteger)degrees animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _rotateCounterclockwise:degrees];
         } completion:nil];
     } else {
@@ -385,7 +387,7 @@
 - (void)rotateCounterclockwise:(NSInteger)degrees aboutPoint:(CGPoint)point animated:(BOOL)animated
 {
     if (animated) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:animationTime animations:^{
             [self _rotateCounterclockwise:degrees aboutPoint:point];
         } completion:nil];
     } else {
