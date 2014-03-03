@@ -10,7 +10,7 @@
 
 @implementation UIView (Frames)
 
-#pragma mark - Accessors
+#pragma mark - Getters
 
 - (CGPoint)origin
 {
@@ -70,6 +70,136 @@
 - (CGFloat)maxY
 {
     return CGRectGetMaxY(self.frame);
+}
+
+#pragma mark - Setters
+
+- (void)setOrigin:(CGPoint)origin animated:(BOOL)animated
+{
+    if (animated) {
+        [UIView animateWithDuration:0.5f animations:^{
+            [self _setOrigin:origin];
+        } completion:nil];
+    } else {
+        [self _setOrigin:origin];
+    }
+}
+
+- (void)_setOrigin:(CGPoint)origin
+{
+    
+}
+
+- (void)setOriginX:(CGFloat)x animated:(BOOL)animated
+{
+    if (animated) {
+        [UIView animateWithDuration:0.5f animations:^{
+            [self _setOriginX:x];
+        } completion:nil];
+    } else {
+        [self _setOriginX:x];
+    }
+}
+
+- (void)_setOriginX:(CGFloat)x
+{
+    
+}
+
+- (void)setOriginY:(CGFloat)y animated:(BOOL)animated
+{
+    if (animated) {
+        [UIView animateWithDuration:0.5f animations:^{
+            [self _setOriginY:y];
+        } completion:nil];
+    } else {
+        [self _setOriginY:y];
+    }
+}
+
+- (void)_setOriginY:(CGFloat)y
+{
+    
+}
+
+- (void)setSize:(CGSize)size animated:(BOOL)animated
+{
+    if (animated) {
+        [UIView animateWithDuration:0.5f animations:^{
+            [self _setSize:size];
+        } completion:nil];
+    } else {
+        [self _setSize:size];
+    }
+}
+
+- (void)_setSize:(CGSize)size
+{
+    
+}
+
+- (void)setWidth:(CGFloat)width animated:(BOOL)animated
+{
+    if (animated) {
+        [UIView animateWithDuration:0.5f animations:^{
+            [self _setWidth:width];
+        } completion:nil];
+    } else {
+            [self _setWidth:width];
+    }
+}
+
+- (void)_setWidth:(CGFloat)width
+{
+    
+}
+
+- (void)setHeight:(CGFloat)height animated:(BOOL)animated
+{
+    if (animated) {
+        [UIView animateWithDuration:0.5f animations:^{
+            [self _setHeight:height];
+        } completion:nil];
+    } else {
+            [self _setHeight:height];
+    }
+}
+
+- (void)_setHeight:(CGFloat)height
+{
+    
+}
+
+- (void)setCenterX:(CGFloat)x animated:(BOOL)animated
+{
+    if (animated) {
+        [UIView animateWithDuration:0.5f animations:^{
+            [self _setCenterX:x];
+        } completion:nil];
+    } else {
+        [self _setCenterX:x];
+    }
+}
+
+- (void)_setCenterX:(CGFloat)x
+{
+    
+}
+
+- (void)setCenterY:(CGFloat)y animated:(BOOL)animated
+{
+    if (animated) {
+        [UIView animateWithDuration:0.5f animations:^{
+            [self _setCenterY:y];
+        } completion:nil];
+    } else {
+            [self _setCenterY:y];
+    }
+}
+
+- (void)_setCenterY:(CGFloat)y
+{
+    
 }
 
 #pragma mark - Mutators

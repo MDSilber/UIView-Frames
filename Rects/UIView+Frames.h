@@ -10,7 +10,7 @@
 
 @interface UIView (Frames)
 
-#pragma mark - Accessors
+#pragma mark - Getters
 
 - (CGPoint)origin;
 - (CGFloat)originX;
@@ -24,6 +24,17 @@
 - (CGFloat)maxX;
 - (CGFloat)minY;
 - (CGFloat)maxY;
+
+#pragma mark - Setters
+
+- (void)setOrigin:(CGPoint)origin animated:(BOOL)animated;
+- (void)setOriginX:(CGFloat)x animated:(BOOL)animated;
+- (void)setOriginY:(CGFloat)y animated:(BOOL)animated;
+- (void)setSize:(CGSize)size animated:(BOOL)animated;
+- (void)setWidth:(CGFloat)width animated:(BOOL)animated;
+- (void)setHeight:(CGFloat)height animated:(BOOL)animated;
+- (void)setCenterX:(CGFloat)x animated:(BOOL)animated;
+- (void)setCenterY:(CGFloat)y animated:(BOOL)animated;
 
 #pragma mark - Mutators
 
