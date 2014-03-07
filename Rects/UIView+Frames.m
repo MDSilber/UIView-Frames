@@ -46,12 +46,12 @@ static float animationTime = 0.5f;
 
 - (CGFloat)centerX
 {
-    return CGRectGetMidX(self.frame);
+    return floorf(CGRectGetMidX(self.frame));
 }
 
 - (CGFloat)centerY
 {
-    return CGRectGetMidY(self.frame);
+    return floorf(CGRectGetMidY(self.frame));
 }
 
 - (CGFloat)minX
@@ -90,7 +90,8 @@ static float animationTime = 0.5f;
 - (void)_setOrigin:(CGPoint)origin
 {
     CGRect frame = self.frame;
-    frame.origin = origin;
+    CGPoint newOrigin = CGPointMake(floorf(origin.x), floorf(origin.y));
+    frame.origin = newOrigin;
     self.frame = frame;
 }
 
@@ -108,7 +109,7 @@ static float animationTime = 0.5f;
 - (void)_setOriginX:(CGFloat)x
 {
     CGRect frame = self.frame;
-    frame.origin.x = x;
+    frame.origin.x = floorf(x);
     self.frame = frame;
 }
 
@@ -126,7 +127,7 @@ static float animationTime = 0.5f;
 - (void)_setOriginY:(CGFloat)y
 {
     CGRect frame = self.frame;
-    frame.origin.y = y;
+    frame.origin.y = floorf(y);
     self.frame = frame;
 }
 
@@ -144,7 +145,8 @@ static float animationTime = 0.5f;
 - (void)_setSize:(CGSize)size
 {
     CGRect frame = self.frame;
-    frame.size = size;
+    CGSize newSize = CGSizeMake(floorf(size.width), floorf(size.height));
+    frame.size = newSize;
     self.frame = frame;
 }
 
@@ -162,7 +164,7 @@ static float animationTime = 0.5f;
 - (void)_setWidth:(CGFloat)width
 {
     CGRect frame = self.frame;
-    frame.size.width = width;
+    frame.size.width = floorf(width);
     self.frame = frame;
 }
 
@@ -180,7 +182,7 @@ static float animationTime = 0.5f;
 - (void)_setHeight:(CGFloat)height
 {
     CGRect frame = self.frame;
-    frame.size.height = height;
+    frame.size.height = floorf(height);
     self.frame = frame;
 }
 
@@ -198,7 +200,7 @@ static float animationTime = 0.5f;
 - (void)_setCenterX:(CGFloat)x
 {
     CGPoint center = self.center;
-    center.x = x;
+    center.x = floorf(x);
     self.center = center;
 }
 
@@ -216,7 +218,7 @@ static float animationTime = 0.5f;
 - (void)_setCenterY:(CGFloat)y
 {
     CGPoint center = self.center;
-    center.y = y;
+    center.y = floorf(y);
     self.center = center;
 }
 
