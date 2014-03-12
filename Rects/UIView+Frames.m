@@ -309,12 +309,7 @@ static float animationTime = 0.5f;
 
 - (void)_expandByFactor:(CGFloat)factor
 {
-    CGRect frame = self.frame;
-    CGPoint center = self.center;
-    frame.size.width *= factor;
-    frame.size.height *= factor;
-    self.frame = frame;
-    self.center = center;
+    self.transform = CGAffineTransformScale(self.transform, factor, factor);
 }
 
 - (void)contractByFactor:(CGFloat)factor animated:(BOOL)animated
@@ -330,12 +325,7 @@ static float animationTime = 0.5f;
 
 - (void)_contractByFactor:(CGFloat)factor
 {
-    CGRect frame = self.frame;
-    CGPoint center = self.center;
-    frame.size.width = floorf(frame.size.width/factor);
-    frame.size.height = floorf(frame.size.height/factor);
-    self.frame = frame;
-    self.center = center;
+    self.transform = CGAffineTransformScale(self.transform, 1.0f/factor, 1.0f/factor);
 }
 
 - (void)rotateClockwise:(NSInteger)degrees animated:(BOOL)animated
