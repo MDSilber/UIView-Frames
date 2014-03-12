@@ -47,9 +47,9 @@
 - (void)testAFunction
 {
     if (self.moveLeft) {
-        [self.testView contractByFactor:2.0f animated:YES];
+        [self.testView rotateClockwise:45 aboutPoint:CGPointMake(CGRectGetMidX(self.view.frame), 300.0f) animated:YES];
     } else {
-        [self.testView expandByFactor:2.0f animated:YES];
+        [self.testView rotateCounterclockwise:45 aboutPoint:CGPointMake(CGRectGetMidX(self.view.frame), 300.0f) animated:YES];
     }
     self.moveLeft = !self.moveLeft;
 }

@@ -8,6 +8,8 @@
 
 #import "UIView+Frames.h"
 
+#define degreesToRadians(x) (M_PI * x / 180.0)
+
 static float animationTime = 0.5f;
 
 @implementation UIView (Frames)
@@ -341,7 +343,7 @@ static float animationTime = 0.5f;
 
 - (void)_rotateClockwise:(NSInteger)degrees
 {
-    
+    self.transform = CGAffineTransformRotate(self.transform, degreesToRadians(degrees));
 }
 
 - (void)rotateClockwise:(NSInteger)degrees aboutPoint:(CGPoint)point animated:(BOOL)animated
@@ -357,7 +359,10 @@ static float animationTime = 0.5f;
 
 - (void)_rotateClockwise:(NSInteger)degrees aboutPoint:(CGPoint)point
 {
-    
+    CGAffineTransform transform = CGAffineTransformTranslate(self.transform, point.x, point.y);
+    transform = CGAffineTransformRotate(transform, degreesToRadians(degrees));
+    transform = CGAffineTransformTranslate(transform, -1.0f * point.x, -1.0f * point.y);
+    self.transform = CGAffineTransformConcat(self.transform, transform);
 }
 
 - (void)rotateCounterclockwise:(NSInteger)degrees animated:(BOOL)animated
@@ -373,7 +378,7 @@ static float animationTime = 0.5f;
 
 - (void)_rotateCounterclockwise:(NSInteger)degrees
 {
-    
+    self.transform = CGAffineTransformRotate(self.transform, -1 * degreesToRadians(degrees));
 }
 
 - (void)rotateCounterclockwise:(NSInteger)degrees aboutPoint:(CGPoint)point animated:(BOOL)animated
@@ -389,7 +394,10 @@ static float animationTime = 0.5f;
 
 - (void)_rotateCounterclockwise:(NSInteger)degrees aboutPoint:(CGPoint)point
 {
-    
+    CGAffineTransform transform = CGAffineTransformTranslate(self.transform, point.x, point.y);
+    transform = CGAffineTransformRotate(transform, -1 * degreesToRadians(degrees));
+    transform = CGAffineTransformTranslate(transform, -1.0f * point.x, -1.0f * point.y);
+    self.transform = CGAffineTransformConcat(self.transform, transform);
 }
 
 #pragma mark - Helpers
