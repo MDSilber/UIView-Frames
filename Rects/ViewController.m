@@ -46,7 +46,7 @@
 
 - (void)testAFunction
 {
-    if (self.moveLeft) {
+    if (!self.moveLeft) {
         [self.testView rotateClockwise:45 aboutPoint:CGPointMake(CGRectGetMidX(self.view.frame), 300.0f) animated:YES];
     } else {
         [self.testView rotateCounterclockwise:45 aboutPoint:CGPointMake(CGRectGetMidX(self.view.frame), 300.0f) animated:YES];

@@ -56,4 +56,6 @@
 - (BOOL)intersectsView:(UIView *)view;
 - (BOOL)containsView:(UIView *)view;
 
+CGRect MakeFrame(float originX, float originY, float width, float height);
+
 @end

@@ -412,4 +412,9 @@ static float animationTime = 0.5f;
     return CGRectContainsRect(self.frame, view.frame);
 }
 
+CGRect MakeFrame(float originX, float originY, float width, float height)
+{
+    return CGRectMake(floorf(originX), floorf(originY), floorf(width), floorf(height));
+}
+
 @end
